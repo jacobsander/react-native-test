@@ -25,7 +25,7 @@ const LoginScreen = ({navigation}) => {
       source={{uri: 'https://images.unsplash.com/photo-1431274172761-fca41d930114?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2550&q=80'}}
       /> 
       <Button
-      title='press me'
+      title='Press me'
       color="red"
       style={styles.button}
       onPress={() => buttonWasPressed()}

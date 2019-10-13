@@ -6,6 +6,9 @@ import { createBottomTabNavigator } from 'react-navigation-tabs'
 import OverviewScreen from './screens/Overview'
 import DetailScreen from './screens/Detail'
 import LoginScreen from './screens/Login';
+import AttractionScreen from './screens/Attraction';
+import SavedTrips from './screens/SavedTrips';
+import ListView from './screens/ListView';
 
 const StackOne = createStackNavigator({
   Overview: {
@@ -13,6 +16,15 @@ const StackOne = createStackNavigator({
   },
   Detail: {
     screen: DetailScreen
+  },
+  Attraction: {
+    screen: AttractionScreen
+  },
+  SavedTrips: {
+    screen: SavedTrips
+  },
+  List: {
+    screen: ListView
   }
 },{
   navigationOptions: {
@@ -25,9 +37,21 @@ const StackOne = createStackNavigator({
 })
 
 const StackTwo = createStackNavigator({
-  StackTwoOverview: {
-    screen: OverviewScreen
+  StackTwoList: {
+    screen: SavedTrips
   },
+},{
+  navigationOptions: {
+    tabBarIcon: ({tintColor}) => {
+      return (
+          <View style={{height: 20, width: 20, backgroundColor: tintColor, borderRadius: 2}}></View>
+      )
+    }
+  }
+})
+
+const StackThree = createStackNavigator({
+  
   StackTwoDetail: {
     screen: DetailScreen
   }
@@ -42,8 +66,9 @@ const StackTwo = createStackNavigator({
 })
 
 const Tab = createBottomTabNavigator({
-  TabOne: StackOne,
-  TabTwo: StackTwo
+  Search: StackOne,
+  Trips: StackTwo,
+  Profile: StackThree,
 },
 {
   tabBarOptions: {

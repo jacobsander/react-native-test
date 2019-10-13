@@ -7,50 +7,64 @@
  */
 
 import React from 'react';
-import { StyleSheet, View, Text, Image, Button } from 'react-native';
+import { StyleSheet, View, Text, ImageBackground, TextInput, Button } from 'react-native';
+import AttractionScreen from './Attraction';
 
 function OverviewScreen({navigation}) {
 
   function buttonWasPressed() {
-    console.log("it worked!")
     navigation.navigate('Detail')
   }
 
   return (
-    <View style={styles.container}>
-      <Text style={styles.title}>Hello Jacob!</Text>
-      <Image
-      style={{width: 50, height: 50}}
-      source={{uri: 'https://images.unsplash.com/photo-1431274172761-fca41d930114?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2550&q=80'}}
-      /> 
-      <Button
-      title='Show Detail'
+
+   <ImageBackground 
+   source={{uri: 'https://images.unsplash.com/photo-1428908728789-d2de25dbd4e2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80'}}
+   style={styles.backgroundImage}>
+     <Text style={styles.title}>
+       Where to?
+    </Text>
+    <TextInput
+      style={styles.searchBar}
+      placeholder="E.g. Los Angeles"
+       />
+    <Button
+      title='Search'
       color="red"
       style={styles.button}
       onPress={() => buttonWasPressed()}
       />
-    </View>
+   </ImageBackground>
+
   );
 };
 
 OverviewScreen.navigationOptions = ({navigation}) => ({
-    title: "Overview"
+    title: "Search"
 })
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: 'blue',
-    flex: 1,
+
+  },
+  backgroundImage: {
+    width: '100%',
+    height: '100%',
     justifyContent: 'center',
-    alignItems: 'center'
+    alignItems: 'center',
   },
   title: {
+    textAlign: 'center',
     color: 'white',
     fontWeight: '600',
     fontSize: 32
   },
-  button: {
-    color: 'red'
+  searchBar: {
+    backgroundColor: 'white',
+    height: 30,
+    width: "70%",
+    marginTop: 10,
+    borderRadius: 10 
   }
 });
 
