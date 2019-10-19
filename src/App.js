@@ -9,6 +9,8 @@ import LoginScreen from './screens/Login';
 import AttractionScreen from './screens/Attraction';
 import SavedTrips from './screens/SavedTrips';
 import ListView from './screens/ListView';
+import Feather from 'react-native-vector-icons/Feather';
+import Entypo from 'react-native-vector-icons/Entypo';
 
 const StackOne = createStackNavigator({
   Overview: {
@@ -30,7 +32,12 @@ const StackOne = createStackNavigator({
   navigationOptions: {
     tabBarIcon: ({tintColor}) => {
       return (
-          <View style={{height: 20, width: 20, backgroundColor: tintColor, borderRadius: 10}}></View>
+        <Feather
+        tintColor
+        name="search"
+        size={20}
+        color={tintColor}
+        />
       )
     }
   }
@@ -44,7 +51,13 @@ const StackTwo = createStackNavigator({
   navigationOptions: {
     tabBarIcon: ({tintColor}) => {
       return (
-          <View style={{height: 20, width: 20, backgroundColor: tintColor, borderRadius: 2}}></View>
+          <Entypo
+          tintColor
+          name="globe"
+          size={20}
+          color={tintColor}
+          
+          />
       )
     }
   }
@@ -59,7 +72,12 @@ const StackThree = createStackNavigator({
   navigationOptions: {
     tabBarIcon: ({tintColor}) => {
       return (
-          <View style={{height: 20, width: 20, backgroundColor: tintColor, borderRadius: 2}}></View>
+        <Feather
+        tintColor
+        name="user"
+        size={20}
+        color={tintColor}
+        />
       )
     }
   }
@@ -72,7 +90,7 @@ const Tab = createBottomTabNavigator({
 },
 {
   tabBarOptions: {
-    activeTintColor: 'tomato',
+    activeTintColor: '#2980b9',
     inactiveTintColor: 'gray',
   },
 })

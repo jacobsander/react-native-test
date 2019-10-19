@@ -8,7 +8,7 @@
 
 import React from 'react';
 import { StyleSheet, View, Text, ImageBackground, TextInput, Button } from 'react-native';
-import AttractionScreen from './Attraction';
+import Feather from 'react-native-vector-icons/Feather';
 
 function OverviewScreen({navigation}) {
 
@@ -28,12 +28,21 @@ function OverviewScreen({navigation}) {
       style={styles.searchBar}
       placeholder="E.g. Los Angeles"
        />
+  <View style={styles.searchButton}>
+    <Feather
+    name="search"
+    color="white"
+    size={20}
+    onPress={() => buttonWasPressed()}
+    />
     <Button
       title='Search'
-      color="red"
+      color="white"
       style={styles.button}
       onPress={() => buttonWasPressed()}
       />
+  </View>
+
    </ImageBackground>
 
   );
@@ -57,15 +66,25 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     color: 'white',
     fontWeight: '600',
-    fontSize: 32
+    fontSize: 42
   },
   searchBar: {
     backgroundColor: 'white',
     height: 30,
-    width: "70%",
+    width: "80%",
     marginTop: 10,
-    borderRadius: 10 
-  }
+    borderRadius: 10,
+    paddingLeft: 10
+  },
+  searchButton: {
+    flexDirection: "row",
+    alignItems: 'center',
+    backgroundColor: "#2980b9",
+    width: "30%",
+    justifyContent: "center",
+    borderRadius: 15,
+    marginTop: 15
+  },
 });
 
 export default OverviewScreen

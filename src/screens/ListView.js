@@ -2,6 +2,9 @@ import React from 'react'
 import {View, Text, StyleSheet} from 'react-native'
 import { tsPropertySignature } from '@babel/types';
 import Colors from '../constants/Colors.js';
+import Icon from 'react-native-vector-icons/MaterialIcons';
+
+
 
 import {CATEGORIES} from '../data/dummy-data'
 
@@ -13,6 +16,8 @@ const ListView = ({navigation}) => {
     return(
         <View style={styles.container}>
             <Text>{selectedCity.title}</Text>
+            <Icon name="access-alarm" size={30}/>
+            
         </View>
     );
 };
